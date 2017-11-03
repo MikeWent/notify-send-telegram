@@ -1,6 +1,8 @@
 # Notify Send Telegram
 
-Send server/desktop notifications to Telegram
+![NST Logo](logo-small.jpg)
+
+Send server/desktop notifications to Telegram. Can be used as reminder with cron, log monitor (see `syslog-monitor.sh` for example), update notifier, etc.
 
 ## Usage
 
