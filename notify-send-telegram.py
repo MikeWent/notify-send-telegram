@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
-import requests
+import argparse
+try:
+    import requests
+except ImportError:
+    print("Module 'requests' isn't installed")
+    exit(1)
 
 class Telegram(object):
     def __init__(self, api_token):
@@ -13,3 +18,4 @@ class Telegram(object):
     def send_message(self, user_id, text):
         return self.method('sendMessage', {'chat_id': user_id,
                                            'text': text})
+
