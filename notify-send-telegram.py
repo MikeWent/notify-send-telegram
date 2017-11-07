@@ -43,6 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--silent", help="send notification with no sound", default=False, action="store_true")
     parser.add_argument("-r", "--recipient", metavar="chat_id", help="telegram chat_id (user_id) to send notification", type=int)
     parser.add_argument("-t", "--token", help="set telegram bot token to use", type=str)
+    parser.add_argument("-s", "--stdin", help="read notification BODY from stdin", action="store_true")
     parser.add_argument("-z", "--save", help="save recipient & token to config file and use them as defaults in future", action="store_true")
     options = parser.parse_args()
 
@@ -74,17 +75,24 @@ if __name__ == "__main__":
         print("No recipient specified. Set it via -r,--recipient or in config file")
         exit(1)
 
+    if options.stdin:
+        from sys import stdin
+        body = stdin.read()
+    else:
+        body = options.BODY
+
     # init bot
     bot = Telegram(token_to_use)
     # construct message
     summary = html.escape(options.SUMMARY).replace("\\n", "\n")
-    body = html.escape(options.BODY).replace("\\n", "\n")
+    body = html.escape(body).replace("\\n", "\n")
     text = "<b>"+summary+"</b>\n"+body
     request_result = bot.send_message(recipient_to_use, text, options.silent)
     if not request_result["ok"]:
         print("Telegram API returned an error!")
         print(request_result["error_code"], request_result["description"])
-    
+        exit(1)
+
     if options.save or config_was_empty:
         with open(CONFIG_FILE, "w") as f:
             config.write(f)
