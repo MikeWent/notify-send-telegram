@@ -6,7 +6,7 @@ Send server/desktop notifications to Telegram. Can be used as reminder with cron
 
 ## How to use
 
-See [requirements](Requirements) for environment information
+See [requirements](#Requirements) for environment information
 
 1. Create your bot via [Bot Father](https://t.me/BotFather)
 2. Copy _token_ of your bot
