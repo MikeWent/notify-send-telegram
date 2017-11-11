@@ -1,12 +1,21 @@
 # Notify Send Telegram
 
-![NST Logo](logo-small.jpg)
+![NST Logo](media/logo-small.jpg)
 
 Send notifications to your phone/desktop instantly via the fastest cross-platform messenger. Can be used as an email notifications replacement, as a reminder (with `cron`), and even as a log monitor (see `examples/syslog-monitor.sh`).
 
 ## Disclaimer
 
 This script **does not** use `notify-send` GNU/Linux utility and even **does not interact** with it. But it uses common syntax for sending notification: `nst 'Title' 'Body'` vs `notify-send 'Title' 'Body'`.
+
+## Requirements
+
+- Python 3 and pip3
+- `requests` python module (see below)
+
+Only for user: `pip3 install --user requests`
+
+System-wide: `sudo -H pip3 install requests`
 
 ## How to use
 
@@ -20,20 +29,13 @@ See [requirements](#requirements) for environment information
 
 You will get 'Hello world' message from your bot. Token and user id will be saved to config file. If you want to override them, just add option `--save`.
 
-Examples:
+## Examples
 
 - Just message with title and body: `nst 'New message' 'Lorem ipsum'`
 - Message without sound: `nst --silent 'Unimportant event' 'Some description'`
 - Read message body from stdin (pipe): `echo "Test" | nst 'Stdin example' --stdin`
 
-### Requirements
-
-- Python 3 and pip3
-- `requests` python module (see below)
-
-Only for user: `pip3 install --user requests`
-
-System-wide: `sudo -H pip3 install requests`
+![Screenshot of dialog with bot](media/screenshot.jpg)
 
 ## Extended documentation
 
