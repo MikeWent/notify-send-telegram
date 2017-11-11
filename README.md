@@ -1,4 +1,4 @@
-# Notify Send Telegram
+# [Notify Send Telegram](https://github.com/MikeWent/notify-send-telegram)
 
 ![NST Logo](logo-small.jpg)
 

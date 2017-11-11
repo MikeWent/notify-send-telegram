@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+##
+# Notify Send Telegram (github.com/MikeWent/notify-send-telegram)
+# Released under the MIT license
+##
+
 # SETTINGS
 CONFIG_FILE = "notify-send-telegram.ini"
 
