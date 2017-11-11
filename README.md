@@ -1,4 +1,4 @@
-# [Notify Send Telegram](https://github.com/MikeWent/notify-send-telegram)
+# Notify Send Telegram
 
 ![NST Logo](logo-small.jpg)
 
@@ -8,20 +8,19 @@ Send server/desktop notifications to Telegram. Can be used as reminder with cron
 
 See [requirements](#requirements) for environment information
 
-1. Create your bot via [Bot Father](https://t.me/BotFather)
-2. Copy _token_ of your bot
-3. Get your _user id_ via [@get_id_bot](https://t.me/get_id_bot)
-4. Press "Start" button to give your bot permission to send messages
-5. Start script: `./notify-send-telegram.py -t YOUR_TOKEN -r USER_ID 'Hello world'`
-6. Add system-wide symlink (optional): `sudo ln -s $(pwd)/notify-send-telegram.py /usr/local/bin/nst`
+1. Create your bot via [Bot Father](https://t.me/BotFather) and copy _token_ of your bot
+2. Get your _user id_ via [@get_id_bot](https://t.me/get_id_bot)
+3. Press "Start" button to give your bot permission to send messages
+4. Start script: `./notify-send-telegram.py -t YOUR_TOKEN -r USER_ID 'Hello world'`
+5. Add system-wide symlink (optional): `sudo ln -s $(pwd)/notify-send-telegram.py /usr/local/bin/nst`
 
 You will get 'Hello world' message from your bot. Token and user id will be saved to config file. If you want to override them, just add option `--save`.
 
 Examples:
 
-- `nst 'New message' 'Lorem ipsum'`
-- `nst --silent 'Unimportant event' 'Some description'`
-- `echo "Test" | nst 'Stdin example' --stdin`
+- Just message with title and body: `nst 'New message' 'Lorem ipsum'`
+- Message without sound: `nst --silent 'Unimportant event' 'Some description'`
+- Read message body from stdin (pipe): `echo "Test" | nst 'Stdin example' --stdin`
 
 ### Requirements
 
@@ -54,7 +53,8 @@ optional arguments:
                         defaults in future
 ```
 
-## License
+## About
 
-MIT
+License: MIT
 
+Made with 💚 by [Mike_Went](https://github.com/MikeWent/notify-send-telegram)
