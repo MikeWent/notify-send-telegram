@@ -6,7 +6,7 @@ Send notifications to your phone/desktop instantly via the fastest cross-platfor
 
 ## Disclaimer
 
-This script **does not** use `notify-send` GNU/Linux utility and even **does not interacts** with it. But it uses common syntax for sending notification: `nst 'Title' 'Body'` vs `notify-send 'Title' 'Body'`.
+This script **does not** use `notify-send` GNU/Linux utility and even **does not interact** with it. But it uses common syntax for sending notification: `nst 'Title' 'Body'` vs `notify-send 'Title' 'Body'`.
 
 ## How to use
 
