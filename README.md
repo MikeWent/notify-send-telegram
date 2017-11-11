@@ -13,14 +13,15 @@ See [requirements](#requirements) for environment information
 3. Get your _user id_ via [@get_id_bot](https://t.me/get_id_bot)
 4. Press "Start" button to give your bot permission to send messages
 5. Start script: `./notify-send-telegram.py -t YOUR_TOKEN -r USER_ID 'Hello world'`
+6. Add system-wide symlink (optional): `sudo ln -s $(pwd)/notify-send-telegram.py /usr/local/bin/nst`
 
 You will get 'Hello world' message from your bot. Token and user id will be saved to config file. If you want to override them, just add option `--save`.
 
 Examples:
 
-- `./notify-send-telegram.py 'New message' 'Lorem ipsum'`
-- `./notify-send-telegram.py 'Just title'`
-- `./notify-send-telegram.py --silent 'Unimportant event' 'Some description'`
+- `nst 'New message' 'Lorem ipsum'`
+- `nst --silent 'Unimportant event' 'Some description'`
+- `echo "Test" | nst 'Stdin example' --stdin`
 
 ### Requirements
 
@@ -48,6 +49,7 @@ optional arguments:
                         telegram chat_id (user_id) to send notification
   -t TOKEN, --token TOKEN
                         set telegram bot token to use
+  -s, --stdin           read notification BODY from stdin
   -z, --save            save recipient & token to config file and use them as
                         defaults in future
 ```
