@@ -2,7 +2,11 @@
 
 ![NST Logo](logo-small.jpg)
 
-Send server/desktop notifications to Telegram. Can be used as reminder with cron, log monitor (see `examples/syslog-monitor.sh`), update notifier, etc.
+Send notifications to your phone/desktop instantly via the fastest cross-platform messenger. Can be used as an email notifications replacement, as a reminder (with `cron`), and even as a log monitor (see `examples/syslog-monitor.sh`).
+
+## Disclaimer
+
+This script **does not** use `notify-send` GNU/Linux utility and even **does not interacts** with it. But it uses common syntax for sending notification: `nst 'Title' 'Body'` vs `notify-send 'Title' 'Body'`.
 
 ## How to use
 
