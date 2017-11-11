@@ -2,9 +2,11 @@
 
 ![NST Logo](logo-small.jpg)
 
-Send server/desktop notifications to Telegram. Can be used as reminder with cron, log monitor (see `syslog-monitor.sh` for example), update notifier, etc.
+Send server/desktop notifications to Telegram. Can be used as reminder with cron, log monitor (see `examples/syslog-monitor.sh`), update notifier, etc.
 
 ## How to use
+
+See [requirements](#requirements) for environment information
 
 1. Create your bot via [Bot Father](https://t.me/BotFather)
 2. Copy _token_ of your bot
@@ -19,6 +21,15 @@ Examples:
 - `./notify-send-telegram.py 'New message' 'Lorem ipsum'`
 - `./notify-send-telegram.py 'Just title'`
 - `./notify-send-telegram.py --silent 'Unimportant event' 'Some description'`
+
+### Requirements
+
+- Python 3 and pip3
+- `requests` python module (see below)
+
+Only for user: `pip3 install --user requests`
+
+System-wide: `sudo -H pip3 install requests`
 
 ## Extended documentation
 
@@ -44,3 +55,4 @@ optional arguments:
 ## License
 
 MIT
+
