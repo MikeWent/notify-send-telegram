@@ -6,7 +6,9 @@
 ##
 
 # SETTINGS
-CONFIG_FILE = "notify-send-telegram.ini"
+# ~ stands for user homedir
+CONFIG_PATH = '~/.config/notify-send-telegram/'
+CONFIG_FILE = 'config'
 
 import html # for escaping html codes
 
@@ -37,6 +39,8 @@ class Telegram(object):
                                            "parse_mode": "HTML"})
 
 if __name__ == "__main__":
+    from os.path import expanduser
+    from os import makedirs
     import argparse
     """
         Args parser
@@ -52,8 +56,10 @@ if __name__ == "__main__":
     parser.add_argument("-z", "--save", help="save recipient & token to config file and use them as defaults in future", action="store_true")
     options = parser.parse_args()
 
+    config_full_path = expanduser(CONFIG_PATH) + CONFIG_FILE
+
     config = configparser.ConfigParser()
-    config.read(CONFIG_FILE)
+    config.read(config_full_path)
     if len(config.sections()) == 0:
         # if empty config
         config["default"] = {"token": "",
@@ -99,6 +105,8 @@ if __name__ == "__main__":
         exit(1)
 
     if options.save or config_was_empty:
-        with open(CONFIG_FILE, "w") as f:
+        # create directory for user config
+        makedirs(config_full_path[0:-len(CONFIG_FILE)])
+        with open(config_full_path, "w") as f:
             config.write(f)
-            print("Current configuration saved in", CONFIG_FILE)
+            print("Current configuration saved in", config_full_path)
