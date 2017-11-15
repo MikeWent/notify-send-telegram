@@ -10,7 +10,7 @@
 CONFIG_PATH = '~/.config/notify-send-telegram/'
 CONFIG_FILE = 'config'
 
-import html # for escaping html codes
+import html
 
 try:
     import requests
@@ -51,6 +51,7 @@ if __name__ == "__main__":
     parser.add_argument("-t", "--token", help="set telegram bot token to use", type=str)
     parser.add_argument("-s", "--stdin", help="read notification BODY from stdin", action="store_true")
     parser.add_argument("-z", "--save", help="save recipient & token to config file and use them as defaults in future", action="store_true")
+    parser.add_argument("-w", "--raw", help="do not escape HTML tags in body (use with caution)", action="store_true")
     options = parser.parse_args()
 
     config_full_path = expanduser(CONFIG_PATH) + CONFIG_FILE
@@ -89,10 +90,14 @@ if __name__ == "__main__":
 
     # init bot
     bot = Telegram(token_to_use)
-
-    # escape html tags
+    
     summary = html.escape(options.SUMMARY).replace("\\n", "\n")
-    body = html.escape(body).replace("\\n", "\n")
+    if options.raw:
+        # do not escape, just replace newlines
+        body = body.replace("\\n", "\n")
+    else:
+        body = html.escape(body).replace("\\n", "\n")
+
     # construct message
     text = "<b>"+summary+"</b>\n"+body
     

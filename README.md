@@ -40,7 +40,7 @@ You will get 'Hello world' message from your bot. Token and user id will be save
 ## Extended documentation
 
 ```
-usage: notify-send-telegram.py [options] SUMMARY [BODY]
+usage: nst [options] SUMMARY [BODY]
 
 positional arguments:
   SUMMARY               Notification title, for example 'New mail'
@@ -57,6 +57,7 @@ optional arguments:
   -s, --stdin           read notification BODY from stdin
   -z, --save            save recipient & token to config file and use them as
                         defaults in future
+  -w, --raw             do not escape HTML tags in body (use with caution)
 ```
 
 ## About
