@@ -8,7 +8,7 @@
 ##
 
 # one or zero
-notify_even_when_updated=1
+notify_even_when_updated=0
 
 echo "Updating apt cache..."
 status=$(sudo apt update | tail -n 1 | cut -d "." -f1)
