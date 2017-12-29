@@ -19,8 +19,6 @@ System-wide: `sudo -H pip3 install requests`
 
 ## How to use
 
-See [requirements](#requirements) for environment information
-
 1. Create your bot via [Bot Father](https://t.me/BotFather) and copy _token_ of your bot
 2. Get your _user id_ via [@get_id_bot](https://t.me/get_id_bot)
 3. Press "Start" button to give your bot permission to send messages
@@ -64,4 +62,4 @@ optional arguments:
 
 License: MIT
 
-Made with 💚 by [Mike_Went](https://github.com/MikeWent/notify-send-telegram)
+Made with 💚 by [Mike_Went](https://github.com/MikeWent)
