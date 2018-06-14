@@ -102,7 +102,7 @@ else:
     body = html.escape(body).replace("\\n", "\n")
 
 # construct message
-text = "<b>"+summary+"</b>\n"+body
+text = "<b>{}</b>\n{}".format(summary, body)
 
 request_result = bot.send_message(recipient_to_use, text, options.silent)
 if not request_result["ok"]:
