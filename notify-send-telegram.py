@@ -11,15 +11,18 @@ CONFIG_PATH = '~/.config/notify-send-telegram/'
 CONFIG_FILE = 'config'
 
 import html
+import_errors = 0
 try:
     import requests
 except ImportError:
     print("Module 'requests' isn't installed")
-    exit(1)
+    import_errors += 1
 try:
     import configparser
 except ImportError:
     print("Module 'configparser' isn't installed")
+    import_errors += 1
+if import_errors > 0:
     exit(1)
 
 class Telegram(object):
