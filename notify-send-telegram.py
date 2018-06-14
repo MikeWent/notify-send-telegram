@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ##
-# Notify Send Telegram (github.com/MikeWent/notify-send-telegram)
+# Notify Send Telegram (git.meew.me/Mike_Went/notify-send-telegram)
 # Released under the MIT license
 ##
 

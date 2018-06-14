@@ -62,4 +62,4 @@ optional arguments:
 
 License: MIT
 
-Made with 💚 by [Mike_Went](https://github.com/MikeWent)
+Made by [Mike_Went](https://meew.me)
