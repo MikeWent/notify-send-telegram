@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-# Notify Send Telegram (git.meew.me/Mike_Went/notify-send-telegram)
+# Notify Send Telegram (github.com/MikeWent/notify-send-telegram)
 # Released under the MIT license
 #
 # This script is just an example of use
